@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<!-- RWD -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- MS -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8,IE=EmulateIE9">
+<title>div</title>
+	<!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- jquery
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script> -->
+    <!-- popper jquery-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- latest javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #div1 {
+            height : 100px;
+            width : 300px;
+            padding : 10px;
+            margin : 3px;
+            border : 1px solid blue;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="div1"></div>
+    <br>
+
+    <button id="btn1">Display dimensions of div(content크기)</button>
+    <button id="btn2">Display dimensions of div(padding포함크기)</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                let txt = "";
+                txt += "Width of div: " + $("#div1").width() + "<br/>"; //width()는 content크기를 반환
+                txt += "Height of div: " + $("#div1").height(); //height()는 content의 높이를 반환 
+                $("#div1").html(txt);
+            });
+            $("#btn2").click(function(){
+                let txt = "";
+                txt += "Inner Width of div: " + $("#div1").innerWidth() + "<br/>"; //Innerwidth()는 패딩포함 가로크기를 반환
+                txt += "Inner Height of div: " + $("#div1").innerHeight(); //Innerheight()는 패딩포함 높이를 반환 
+                $("#div1").html(txt);
+        });
+    });
+    </script>
+
+</body>
+</html>

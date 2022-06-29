@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<!-- RWD -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- MS -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8,IE=EmulateIE9">
+<title>Fade효과</title>
+	<!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- jquery
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script> -->
+    <!-- popper jquery-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- latest javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h3>Fade효과</h3>
+    <hr>
+
+    <button id="fin">Click to fade in boxes</button><br>
+    <button id="fout">Click to fade out boxes</button><br>
+    <button id="ftoggle">Click to fade toggle boxes</button><br>
+    <button id="fto">Click to fade to boxes</button><br>
+
+    <div id="div1" style="width:80px; height:80px; display:none; background-color: red;">
+    </div>
+    <div id="div2" style="width:80px; height:80px; display:none; background-color:green;">
+    </div>
+    <div id="div3" style="width:80px; height:80px; display:none; background-color:blue;">
+    </div>
+<script>
+        $(document).ready(function(){
+            $("#fin").click(function(){
+                $("#div1").fadeIn(); //기본형
+                $("#div2").fadeIn("slow"); 
+                $("#div3").fadeIn(3000); 
+            });
+            $("#fout").click(function(){
+                $("#div1").fadeOut(); //기본형
+                $("#div2").fadeOut("slow"); 
+                $("#div3").fadeOut(3000); 
+            });
+            $("#ftoggle").click(function(){
+                $("#div1").fadeToggle(); //기본형
+                $("#div2").fadeToggle("slow"); 
+                $("#div3").fadeToggle(3000); 
+            });
+            $("#fto").click(function(){
+                $("#div1").fadeTo("slow", 0.15); //speed와 opacity, callback이 파라메터이고 앞의 두개는 필수
+                $("#div2").fadeTo("slow", 0.4); 
+                $("#div3").fadeTo("slow", 0.7); 
+            });
+
+        });
+    </script>
+
+</body>
+</html>

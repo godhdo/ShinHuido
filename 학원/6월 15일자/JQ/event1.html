@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<!-- RWD -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- MS -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8,IE=EmulateIE9">
+<title>Jquerystart</title>
+	<!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- jquery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <!-- popper jquery-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- latest javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        #p1 {
+            width : 300px;
+            border : 1px solid red;
+        }
+        #p4 {
+            width : 200px;
+            border : 1px solid red;
+        }
+    </style>
+</head>
+<>
+
+    <p>If you click on me, I will disappear.</p>
+    <p>Click me away!</p>
+    <p>Click me too!</p>
+    <h3 id="dbc">dbc click me</h3>
+
+    <p id="p1">Enter this paragraph.</p>
+    <hr>
+    <p id="p2">This is a paragraph.</p>
+    <hr>
+    <p id="p3">This is up!</p>
+    <p id="p4">This is a paragraph hover.</p>
+
+    <input type="button" name="btn1" value="누르지마세요.">
+    <input type="button" name="btn2" value="누르지마세요.">
+
+    <p id="p5">This is a paragraph on single.</p>
+    <p id="p6">This is a paragraph.</p>
+
+    <script>
+        $(document).ready(function(){
+            $("p").click(function(){
+//click()은 클릭이벤트 처리 메서드로 jq에서는 이벤트 이름과 처리 메서드 이름이 동일
+            $(this).hide();
+        });
+        $("#dbc").dblclick(function(){
+            $(this).hide();
+        });
+        $("#p1").click /*mouseenter*/ (function(){ //마우스가 엘리먼트로 진입시 이벤트
+            alert("You entered p1");
+        });
+        $("#p1").mouseleave(function(){
+            alert("Bye! You now leave p1!");
+        });
+        $("#p2").mousedown(function(){
+            alert("Mouse down over");
+        });
+        $("#p3").mouseup(function(){
+            alert("Mouse up over")
+        });
+        $("#p4").hover(function(){ //hover이벤트는 mouseenter와 mouseleave이벤트가 결합된 이벤트 이므로 함수 2개 만듬
+            alert("You entered p4!");
+        },
+        function() {
+            alert("Bye! You now leave p4!");
+        });
+        $("input").focus(function(){ // focus이벤트 처리 메서드
+            $(this).css("background-color", "white"); //css(css속성, 값)메서드는 css스타일 변경시 사용
+            $(this).css("color", "black");
+            //자바스ㅡ립트는 DOM객체명.style.backgroundcolor="violet"
+        });
+        $("input").blur(function(){
+            $(this).css("background-color", "black");
+            $(this).css("color", "white");
+        });
+        $("#p5").on("click",function(){ //이벤트처리 on함수에 하나의 이벤트 처리시는 on(이벤트명,함수)
+            $(this).hide();
+        });
+        $("#p6").on({ //다중이벤트처리함수 on({}) js객체형으로 {}안에 이벤트명 : 함수, 이벤트명 : 함수~~로 만듦.
+            mouseenter : function() {
+                $(this).css("background-color", "lightgray");
+            },
+             mouseleave: function() {
+                $(this).css("background-color", "lightblue");
+             },
+             click: function() {
+                $(this).css("background-color", "yellow");
+             }
+        });
+    });
+    </script>
+
+</body>
+</html>

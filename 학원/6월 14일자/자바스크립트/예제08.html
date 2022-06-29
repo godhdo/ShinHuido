@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제08</title>
+    <style>
+        span {
+            color : blue;
+        }
+        div {
+            border-color : yellowgreen;
+            border-style: solid;
+            border-width: 1px;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        function printNavigtor() {
+            let text = "<span>appCodeName</span> : " + navigator.appCodeName + "<br>";
+            text += "<span>appName</span>: " + navigator.appName + "<br>";
+            text +=
+             "<span>appVersion</span>: " + navigator.appVersion + "<br>";
+            text += "<span>platform</span>: " + navigator.platform + "<br>";
+            text += "<span>product</span>: " + navigator.product + "<br>";
+            text += "<span>userAgent</span>: " + navigator.userAgent + "<br>";
+            let div = document.getElementById("div");
+            div.innerHTML = text;
+        }
+    </script>
+</head>
+<body onload="printNavigtor()">
+    <h3>브라우저에 관한 정보 출력</h3>
+    아래에 이 브라우저에 관한 내용을 출력합니다.
+    <hr>
+    <p>
+        <div id="div"></div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<!-- RWD -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- MS -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8,IE=EmulateIE9">
+<title>Jquerystart</title>
+	<!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- jquery
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script> -->
+    <!-- popper jquery-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- latest javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+    <form>
+    <label for="email" class="mx-2">Email:</label>
+    <input type="email" class="form-control mx-2" id="email" placeholder="Enter email" name="email">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control mx-2" id="pwd" placeholder="Enter password" name="pswd">
+    <div class="form-check">
+        <label class="form-check-label">
+                <input class="form-check-input mx-2" type="checkbox" name="remember"> Remember me
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary mx-5">Submit</button>
+    </form>
+</div>
+<br><br>
+
+    <div class="container">
+        <h2>Form Grid</h2>
+        <form>
+            <div class="row"> <!-- 줄을 만드는 클래스 -->
+                <div class="col">
+                    <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="col">
+                    <input type="password" class="form-control" placeholder="Enter password" name="pswd">
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            </div>
+        </form>
+    </div>
+    <br><br>
+
+    <div class="container">
+        <h2>Form Grid</h2>
+        <form>
+            <div class="form-row"> <!-- 줄을 만드는 클래스로 -->
+                <div class="col">
+                    <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="col">
+                    <input type="password" class="form-control" placeholder="Enter password" name="pswd">
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <br><br>
+    <div class="container">
+        <h2>Form Validation</h2>
+        <form action="#" class="was-validated"> <!-- submit전 체크 -->
+            <div class="form-group">
+                <label for="uname">Username:</label>
+                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+                <div class="valid-feedback">Valid.</div> <!-- 체크시 입력이 타당하지 않을시 -->
+                <div class="invalid-feedback">Please fill out this field.</div> <!-- 체크시 입력이 타당할시 보이는 엘리먼트 흑색 -->
+            </div>
+            <div class="form-group form-check"> <!-- checkbox나 radio시 form-check추가 -->
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Check this checkbox to continue.</div>
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <br><br>
+    <div class="container">
+        <h2>Form Validation</h2>
+        <form action="#" class="needs-validated" novalidate> <!-- submit후 체크, html자체 처리 하지 말것 -->
+            <div class="form-group">
+                <label for="uname">Username:</label>
+                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+                <div class="valid-feedback">Valid.</div> <!-- 체크시 입력이 타당하지 않을시 -->
+                <div class="invalid-feedback">Please fill out this field.</div> <!-- 체크시 입력이 타당할시 보이는 엘리먼트 흑색 -->
+            </div>
+            <div class="form-group form-check"> <!-- checkbox나 radio시 form-check추가 -->
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Check this checkbox to continue.</div>
+                </label>
+            </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        </div>
+
+        <script>
+            //자동실행되는 함수
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    var forms =document.getElementsByClassName('needs-validation');
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        </script>
+
+</body>
+</html>

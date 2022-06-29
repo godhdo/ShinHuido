@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제09</title>
+    <script>
+        function printScreen() {
+            let text = "availHeight:" + screen.availHeight + "<br>"; //브라우저가 사용 가능한 높이
+            text += "availWidth : " + screen.availWidth + "<br>"; //브라우저가 사용 가능한 넓이
+            text += "colorDepth : " + screen.colorDepth + "<br>"; //컬러 비트수
+            text += "pixelDepth : " + screen.pixelDepth + "<br>"; //컬러비트수 colorDepth를 주로 사용
+            text += "height : " + screen.height + "<br>"; //스크린의 높이
+            text += "width : " + screen.width + "<br>"; //스크린의 넓이
+
+            document.getElementById("div").innerHTML = text;
+        }
+    </script>
+</head>
+<body onload="printScreen()">
+    <h3>스크린 장치에 관한 정보</h3>
+    <hr>
+    <div id ="div"></div>
+</body>
+</html>

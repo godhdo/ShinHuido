@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<!-- RWD -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- MS -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8,IE=EmulateIE9">
+<title>Animation효과</title>
+	<!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- jquery
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script> -->
+    <!-- popper jquery-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- latest javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h3>Animation Effect</h3>
+    <hr>
+
+    <button id="btn1">Start Animation</button><br>
+    <button id="btn2">Start Animation(show,hide,toggle값 사용)</button><br>
+    <button id="btn3">Start Animation(quene사용)</button>
+
+    <!-- animate하려면 위치가 바뀔 것을 대비하여 position 속성을 absolute나 relative로 준다 -->
+    <div style="background:#98bf21; height: 100px; width:100px; position:absolute;">
+        HELLO
+    </div>
+
+<script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("div").animate({
+                left: '250px',
+                opacity:'0.5',
+                height: '150px',
+                width: '150px'
+            }); 
+                    //필수 파라메터인 첫번째 파라메터는 css의 속성을 객체 형식으로 표시
+                    //css속성명은 객체의 key, 속성값은 value형태이므로 value는 ' '또는 " "를 이용
+                });
+                $("#btn2").click(function(){
+                    $("div").animate({
+                        height: 'toggle' //jquery에서 정의된 속성값(show,hide도 있음)
+                    });
+                });
+                $("btn3").click(function(){
+                    let div = $("div");
+                    div.animate({left: "100px"}, "slow");
+                    div.animate({fontSize: "3em"}, "slow");
+                    //animate()메서드를 순서대로 실행하면 순서에의해 애니메이션 일어남
+                });
+            });
+    </script>
+    <script>
+        $(document).ready(function(){
+           $("#btn1").click(function(){
+              $("div").animate({
+                 left: '250px',
+                 opacity : "0.5",
+                 height : "150px",
+                 width : "150px"
+              });
+              //필수 파라메터인 첫번째 파라메터는 css의 속성을 객체형식으로 표시
+              //css의 속성명은 객체의 key, 속성값은 value형태이므로 value ' ' 또는 " "를 이용
+           });
+           $("#btn2").click(function(){
+              $("div").animate({
+                 height : "toggle"   //jQuery에서 정의된 속성값(show, hide도 있음)
+              });
+           });
+           $("#btn3").click(function(){
+              let div = $("div");
+              div.animate({left : "100px"}, "slow");
+              div.animate({fontSize : "3em"}, "slow");
+              //animate()메서드를 순서대로 실행하면 순서에의해 애니메이션이 일어남
+           });
+        });
+     </script>
+    
+</body>
+</html>

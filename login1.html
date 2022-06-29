@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>로그인창1</title>
+
+<!-- link 태그를 이용하여 login1이라는 css파일과 연결하는 작업-->
+<link rel="stylesheet" href="login1.css">
+
+
+
+</head>
+<body>
+
+<!-- div(전체블록차지, 여러 속성 사용가능) 를 넣어주는 이유 : css파일에서 style 꾸밀 때 영역을 나눠놔야 유용-->
+<div class="loginbox">
+<h2> 광장으로 입장하기  </h2>
+<!-- form은 웹페이지의 정보를 다른 페이지로 전송하는 역할을 한다. 
+	 현재 어디로 로그인 입력 정보를 넘길지 모르니 "#"으로 임시 입력
+-->
+<form action="#">
+
+<!-- fieldset: form내부에서 구역을 또 나누어 주는 것 -->
+<fieldset>
+<!-- fieldset박스의 제목을 달아주는 역할을 하는 legend -->
+<legend>로그인 구역</legend>
+<!--label의 for은 input의 name과 동일하게 연결해줘야 한다.-->
+<label for="loginid">ID</label>
+<!-- maxlength : 입력창에 최대 몇 글자까지 받을 지 지정해주는 것 ex)maxlength="10" 는 10글자까지만 입력가능-->
+<!-- input입력 상자 자체의 사이즈(길이)를 조절하고 싶을 땐 size 를 사용 ex) size="30" -->
+<!-- input태그에 name 요소도 필수다. name을 정해주어야 값을 전송받는 페이지에서 name으로 저장된 데이터를 찾을 수 있다. -->
+<!-- placeholder와 value 차이 : placehorder는 내가 입력창에서 조작할 수 있는 텍스트가 아니고 (배경 뒤에 흐릿하게 나옴) 
+							  value는 직접 입력창에 나오는 텍스트로 수정/지우기가 가능하다. -->
+<input type="text" name="loginid" placeholder="ID를 입력하세요" maxlength="10" size="30"><br/>
+<label for="loginpw">PW</label>
+<input type="password" name="loginpw" placeholder="비밀번호를 입력하세요"><br/>
+
+<ul>
+	<!--아직 어디 페이지로 연결할 지 미정이니 "#"으로 남겨두기-->
+	<li><a href="#">ID/비밀번호 찾기</a></li>
+	<li><a href="#">회원가입하기</a></li>
+
+</ul>
+
+
+<!-- type이 button이 아니고 submit인 이유? type="button"은 내가 버튼을 눌렀을 때 다른 어떤 이벤트 효과를 줄때(ex.링크나 이미지 열기 등) 사용하고
+여기선 입력된 데이터를 전송해야하는 기능이므로 submit을 사용한다.-->
+<!-- input type="submit" 이 아닌 이유? input 태그를 사용하면 label을 사용해야 하는데
+	button태그로 쓰면 label을 사용하지 않아도 되서 <button>태그를 사용하라고 한다. -->
+<!-- 만약 <input type="submit"을 사용하면, 기본 값으로 버튼 내용이 '제출'이라고 뜨는데
+	 이 버튼 안의 내용을 '로그인'으로 바꾸고 싶으면 <input type="submit value="로그인"> 으로 써주면 된다.
+	 value 안에는 원하는 바꿀 이름을 쓰면 되는 것.
+	  -->
+<button type="submit" name="login">로그인</button>
+
+
+
+
+
+
+</fieldset>
+</form>
+</div>
+</body>
+</html>
